@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>My Heirloom</title>
+    <meta name="description" content="My Heirloom">
+    <meta name="www.heirloo.mm." content="heirloo.mm">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
+
+    
+    <link rel="import" href="web_parts/heirloom-card.html">
+     <link rel="import" href="web_parts/heirloom-card-3.html">
+    <link rel="import" href="web_parts/dashboard-card.html">
+    <link rel="import" href="web_parts/adddesc-card.html">
+    <link rel="import" href="web_parts/search-form.html">
+    <link rel="import" href="web_parts/adddesc-icon.html">
+    <link rel="import" href="web_parts/response-icon.html">
+    <link rel="import" href="web_parts/share-icon.html">
+    <link rel="import" href="web_parts/simple-gallery.html">
+    <link rel="import" href="web_parts/form-modal.html">
+    
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/my_theme.css">
+
+
+    <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+<!-- Fixed header -->
+<div class="header-style mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      
+      <!-- Title -->
+      <span class="mdl-layout-title">Heirloo.mm</span>
+      
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      
+      <!-- right navigation - hidden on small screens -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <search-form></search-form>
+        <adddesc-icon></adddesc-icon>
+        <response-icon></response-icon>
+        <share-icon></share-icon>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Heirloom Galleries</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">All Heirlooms<span class="mdl-badge" data-badge="34"></span></a>
+      <a class="mdl-navigation__link" href="">New Additions</a>
+      <a class="mdl-navigation__link" href="">Ready to Share</a>
+      <a class="mdl-navigation__link" href="">Offered Heirlooms</a>
+      <a class="mdl-navigation__link" href="">Accepted Heirlooms</a>
+      </nav>
+      <span class="mdl-layout-title">Profile</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Heirloom Photo Import</a>
+      <a class="mdl-navigation__link" href="">Preferences</a>
+      <a class="mdl-navigation__link" href="">Connect to Contacts</a>
+      </nav>
+      
+  </div>  
+    
+      
+        
+     <!-- Masonry Layout with Heirloom Cards -->  
+          <main class="mdl-layout__content">
+             <div class="grid">
+                <heirloom-card class="grid-item"><form-modal>`     </form-modal></heirloom-card>
+                <heirloom-card class="grid-item"></heirloom-card>
+                <heirloom-card class="grid-item"></heirloom-card>
+                <heirloom-card class="grid-item"></heirloom-card>
+
+             </div>
+             
+             <heirloom-card-3></heirloom-card-3>
+             
+          </main>
+  </div>
+</body>
+
+<script>
+    
+ var $grid = $('.grid').masonry({
+    columnWidth: 330,
+    itemSelector: '.grid-item',
+    gutter: 5
+  });
+    
+</script>
+
+</html>

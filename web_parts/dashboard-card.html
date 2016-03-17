@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- dashboard-card web parts -->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+
+<dom-module id="dashboard-card">
+
+<style>
+    
+.dashboard-card.mdl-card {
+    width: 330px;
+    height: 120px;
+    background: #3E4EB8;
+}
+.dashboard-card > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.dashboard-card > .mdl-card__title {
+  align-items: flex-start;
+}
+.dashboard-card > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.dashboard-card > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+
+.dashboard-card > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+    
+.dashboard-card > .mdl-card__title,
+.dashboard-card> .mdl-card__actions,
+.dashboard-card > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}  
+
+</style>
+
+
+<template>
+    <div class="dashboard-card mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title mdl-card--expand">
+            <h6>Add new heirlooms to your gallery by importing images from your favorite photo service.</h6>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Launch import wizard</a>
+            <div class="mdl-layout-spacer"></div>
+            <i class="material-icons">launch</i>
+        </div>
+    </div>
+    
+</template>
+
+
+<script>
+    Polymer({
+        is: "dashboard-card"
+    });
+    
+</script>
+
+</dom-module>
+</html>

@@ -1,0 +1,74 @@
+.header-style .mdl-layout__header,
+.header-style .mdl-layout__drawer-button {
+    color: #444;
+}
+
+search-form,
+adddesc-icon,
+response-icon {
+    padding-right: 15px;
+}
+
+.mdl-layout__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+dashboard-card,
+heirloom-card {
+    height: auto;
+}
+
+/* Grid styles */
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  background: #fff;
+
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 330px;
+  margin-bottom: 5px;
+}
+
+/* -----------Media Queries--------------- */
+
+@media (min-width: 1335px) {
+  .grid {
+    width: 1335px;
+  }
+}
+
+@media (max-width: 1334px) and (min-width: 1000px) {
+  .grid {
+    width: 1000px;
+  }
+}
+
+@media (max-width: 999px) and (min-width: 665px) {
+  .grid {
+    width: 665px;
+  }
+}
+
+@media (max-width: 664px) {
+  .grid {
+    width: 330px;
+  }
+}

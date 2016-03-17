@@ -1,0 +1,25 @@
+{
+  "name": "Heirloom",
+  "homepage": "https://github.com/mhgreeley/Heirloom",
+  "authors": [
+    "mhgreeley"
+  ],
+  "description": "Polymer",
+  "main": "index",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-map": "GoogleWebComponents/google-map#^1.1.10",
+    "iron-overlay-behavior": "PolymerElements/iron-overlay-behavior#^1.4.1",
+    "paper-dialog": "PolymerElements/paper-dialog#^1.0.4",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.0.7",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.2.0"
+  }
+}
