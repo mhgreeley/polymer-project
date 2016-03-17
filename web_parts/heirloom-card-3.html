@@ -14,7 +14,7 @@
 
     <dom-module id="heirloom-card-3">
         
-
+ <template>
         <style>
 
             
@@ -50,7 +50,7 @@
         </style>
 
 
-        <template>
+       
             <iron-ajax  
             auto
             url="https://api.flickr.com/services/feeds/photos_public.gne?id=139350096@N08&format=json" 
@@ -88,12 +88,12 @@
                     </div>
                 </div>
             </template>
-        </template>
+        
         
         <script>
             Polymer({
                 is: "heirloom-card-3"
             });
         </script>
-
+</template>
 </dom-module>
