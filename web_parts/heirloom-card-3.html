@@ -3,7 +3,7 @@
 
 
     <link rel="import" href="../bower_components/polymer/polymer.html">
-    <link rel="import" href="../bower_components/iron-jsonp-library/iron-jsonp-library.html">
+    <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -59,7 +59,7 @@
             </iron-ajax>
 
             <template is="dom-repeat" items="{{card}}">
-                <div class="heirloom-card-wide mdl-card mdl-shadow--2dp" id={{item.title}}>
+                <div class="heirloom-card-wide mdl-card mdl-shadow--2dp">
                     <div class="image-container">
                         <img src="{{item.media}}" alt="">
                     </div>
