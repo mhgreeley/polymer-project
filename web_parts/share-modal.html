@@ -1,4 +1,9 @@
 
+
+
+<!--  form-modal webpart -->
+
+
    <link rel="import" href="../bower_components/polymer/polymer.html">
     
     <link rel="stylesheet" href="../css/normalize.css">
@@ -6,7 +11,8 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
-    <dom-module id="form-modal">
+<body>
+    <dom-module id="share-modal">
     
     
     
@@ -62,19 +68,19 @@
     
     <template>
     
-        <dialog class="mdl-dialog" id="editDialog">
+        <dialog class="mdl-dialog" id="shareDialog">
             <form action="#" method="dialog" class="mdl-dialog__content">
                 <div><img src="../img/teacups.jpg"></div>
     
                 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                     <div class="mdl-tabs__tab-bar">
-                        <a href="#details-panel" class="mdl-tabs__tab is-active">Details</a>
+                        <a href="#details-panel" class="mdl-tabs__tab">Details</a>
                         <a href="#story-panel" class="mdl-tabs__tab">Story</a>
                         <a href="#tags-panel" class="mdl-tabs__tab">Tags</a>
-                        <a href="#share-panel" class="mdl-tabs__tab">Share</a>
+                        <a href="#share-panel" class="mdl-tabs__tab is-active">Share</a>
                     </div>
     
-                    <div class="mdl-tabs__panel is-active" id="details-panel">
+                    <div class="mdl-tabs__panel" id="details-panel">
                         <ul>
                         <li>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -196,7 +202,7 @@
                         </ul>
                     </div>
                     
-                      <div class="mdl-tabs__panel" id="share-panel">
+                      <div class="mdl-tabs__panel" id="share-panel is-active">
                         <ul>
                             <li>Viserys</li>
                             <li>Daenerys</li>
@@ -211,27 +217,27 @@
          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       Save
     </button>
-          <button type="button" class="mdl-button close" id="cancel">Cancel</button>
+          <button type="button" class="mdl-button close" id="cancel1">Cancel</button>
         </div>
     
     
             </form>
         </dialog>
     
-    <button onclick="backdrop.open()" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="updateDetails">
-                    <i class="material-icons">edit</i>
+    <button onclick="backdrop.open()" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="shareDetails">
+                    <i class="material-icons">share</i>
                 </button>
                 
     </template>
     
     <script>
         Polymer({
-            is: "form-modal",
+            is: "share-modal",
             ready:
                 function() {
-                var updateButton = document.getElementById('updateDetails');
-                var cancelButton = document.getElementById('cancel');
-                var favDialog = document.getElementById('editDialog');
+                var updateButton = document.getElementById('shareDetails');
+                var cancelButton = document.getElementById('cancel1');
+                var favDialog = document.getElementById('shareDialog');
             
                 // Update button opens a modal dialog
                 updateButton.addEventListener('click', function() {
@@ -250,4 +256,3 @@
     
     
     </dom-module>
-    

@@ -51,14 +51,15 @@
 
 
         <template>
-            <iron-jsonp-library  
-            library-url="https://api.flickr.com/services/feeds/photos_public.gne?id=139350096@N08&format=json" 
-            notify-event="api-load"
-            library-loaded="{{card}}">
-            </iron-jsonp-library>
+            <iron-ajax  
+            auto
+            url="https://api.flickr.com/services/feeds/photos_public.gne?id=139350096@N08&format=json" 
+            handle-as="json"
+            last-response="{{card}}">
+            </iron-ajax>
 
             <template is="dom-repeat" items="{{card}}">
-                <div class="heirloom-card-wide mdl-card mdl-shadow--2dp">
+                <div class="heirloom-card-wide mdl-card mdl-shadow--2dp" id={{item.title}}>
                     <div class="image-container">
                         <img src="{{item.media}}" alt="">
                     </div>
