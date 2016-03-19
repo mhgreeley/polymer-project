@@ -1,0 +1,48 @@
+
+
+
+<!-- heirloom-card web parts -->
+
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/byutv-jsonp/byutv-jsonp.html">
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+
+    <dom-module id="json-bind">
+   <template> 
+
+
+<byutv-jsonp
+				 auto
+				 url="http://jsonplaceholder.typicode.com/posts"
+				 params='{"userId":"1"}'
+				 last-response="{{lastResponse}}"
+				 last-error="{{lastError}}"
+				 debounce-duration="300"></byutv-jsonp>
+
+
+    
+       <ul>
+            <template is="dom-repeat" items="{{card}}">
+             <li>
+                        <img src="{{item.img}}" alt=""> 
+                          <div>{{item.title}}</div>
+                          <div>{{item.description}}</div>
+                           
+              
+             </li>
+               </template>
+        </ul>
+   </template>
+    
+    
+        <script>
+            Polymer({
+                is: "json-bind"
+                 });
+        </script>
+        </dom-module>

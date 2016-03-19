@@ -72,9 +72,10 @@
                 
         
          <div class="mdl-dialog__actions">
-         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+         <button on-click="hideMe" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       Yes, delete Heirloom
     </button>
+         
           <button type="button" class="mdl-button close" id="cancel2">Cancel</button>
         </div>
     
@@ -90,6 +91,16 @@
     <script>
         Polymer({
             is: "delete-modal",
+             properties: {
+                    hide: {
+                        type: Boolean,
+                        value: false
+                    }
+                },
+                
+                hideMe: function() {
+                    this.hide = !this.hide
+                },
             ready:
                 function() {
                 var updateButton = document.getElementById('deleteDetails');

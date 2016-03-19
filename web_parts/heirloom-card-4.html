@@ -1,0 +1,81 @@
+
+<!-- heirloom-card web parts -->
+
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="form-modal.html">
+    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+
+    <dom-module id="heirloom-card-4">
+    
+        <style>
+            .heirloom-card-wide.mdl-card {
+                width: 330px;
+                margin: 0px;
+            }
+            
+            .heirloom-card-wide > .mdl-card__title {
+                color: #fff;
+                height: 176px;
+                background: url('../img/teacups.jpg') center / cover;
+            }
+            
+            .heirloom-card-wide > .mdl-card__menu {
+                color: #fff;
+            }
+            
+            .mdl-card__supporting-text {
+                width: 100%;
+            }
+            
+        </style>
+    
+        <template>
+    
+            <div class="heirloom-card-wide mdl-card mdl-shadow--2dp" hidden$="{{hide}}">
+                <div class="mdl-card__title">
+                    <h2 class="mdl-card__title-text">Heirloom Title</h2>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    Authentic farm-to-table pour-over artisan stumptown, chartreuse poutine kickstarter gentrify taxidermy affogato kitsch fap. Brunch bitters leggings readymade photo booth, organic trust fund swag.
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Show More</a>
+                </div>
+    
+                <div class="mdl-card__menu">
+                    
+                        <content></content>
+                        
+                         <button on-click="hideMe" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">mail</i>
+                </button>
+                        
+                        
+                </div>
+            </div>
+    
+        </template>
+    
+    
+        <script>
+            Polymer({
+                is: "heirloom-card-4",
+                properties: {
+                    hide: {
+                        type: Boolean,
+                        value: false
+                    }
+                },
+                
+                hideMe: function() {
+                    this.hide = !this.hide
+                }
+            });
+        </script>
+    
+    </dom-module>
