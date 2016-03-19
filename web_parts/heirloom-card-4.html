@@ -3,7 +3,7 @@
 
 
     <link rel="import" href="../bower_components/polymer/polymer.html">
-    <link rel="import" href="form-modal.html">
+    <link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
     
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -42,9 +42,16 @@
                 </div>
                 <div class="mdl-card__supporting-text">
                     Authentic farm-to-table pour-over artisan stumptown, chartreuse poutine kickstarter gentrify taxidermy affogato kitsch fap. Brunch bitters leggings readymade photo booth, organic trust fund swag.
+                    
+                    <iron-collapse id="collapse">
+                  <div>Content goes here...</div>
+                    </iron-collapse>
+                
                 </div>
+                
+                
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Show More</a>
+                    <button on-click="toggle" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Toggle Details</button>
                 </div>
     
                 <div class="mdl-card__menu">
@@ -52,7 +59,7 @@
                         <content></content>
                         
                          <button on-click="hideMe" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">mail</i>
+                    <i class="material-icons">delete</i>
                 </button>
                         
                         
@@ -70,10 +77,15 @@
                         type: Boolean,
                         value: false
                     }
+                    
                 },
                 
                 hideMe: function() {
                     this.hide = !this.hide
+                },
+                
+                 toggle: function() {
+                    this.$.collapse.toggle();
                 }
             });
         </script>
