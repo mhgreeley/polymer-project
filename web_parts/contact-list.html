@@ -1,0 +1,76 @@
+
+
+<!-- Share Webpart -->
+
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+
+
+
+   <dom-module id="contact-list">
+
+  <style>
+      .material-icons {
+          padding-right: 5px;
+      }
+
+  </style>
+
+  <template>
+  <p>Click on the email icon to share this heirloom with a loved one via a quick email message.</p>
+  <ul class="mdl-list">
+     <template is="dom-repeat" items="{{contact}}">
+      <li class="mdl-list__item">
+          
+             <div><span class="mdl-list__item-primary-content"><a class="mdl-list__item-secondary-action" href="mailto:{{item.email}}"><i class="material-icons">email</i></a> {{item.firstName}} {{item.lastName}} </span></div>
+              </li>
+          </template>
+      
+  </ul>
+
+  
+
+  </template>
+
+</dom-module>
+
+        
+        <script>
+            Polymer({
+                is:"contact-list",
+                ready: function () {
+                this.contact = [
+                    {
+                        firstName: "Tom",
+                        lastName: "McAllister",
+                        email: "tom@domain.com"
+                        },
+                    {
+                        firstName: "Amy",
+                        lastName: "Williams",
+                        email: "amy@domain.com"
+                        },
+                    {
+                        firstName: "Lilly",
+                        lastName: "Jones",
+                        email: "lilly@domain.com"
+                        },
+                    {
+                        firstName: "Dan",
+                        lastName: "McAllister",
+                        email: "dan@domain.com"
+                        },
+                    {
+                        firstName: "Twilla",
+                        lastName: "Kline",
+                        email: "twilla@domain.com"
+                        },
+                    ]
+                },
+            });
+     </script>

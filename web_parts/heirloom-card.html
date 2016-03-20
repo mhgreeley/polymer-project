@@ -1,9 +1,8 @@
-
 <!-- heirloom-card web parts -->
 
 
     <link rel="import" href="../bower_components/polymer/polymer.html">
-    <link rel="import" href="form-modal.html">
+    <link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
     
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -21,7 +20,6 @@
             .heirloom-card-wide > .mdl-card__title {
                 color: #fff;
                 height: 176px;
-                background: url('../img/teacups.jpg') center / cover;
             }
             
             .heirloom-card-wide > .mdl-card__menu {
@@ -30,26 +28,64 @@
             
             .mdl-card__supporting-text {
                 width: 100%;
+                max-height: 500px;
+                overflow-y: scroll;
+            }
+            
+            h6 {
+                color: #333;
+                font-weight:700;
+                font-size: 12px;
+                margin-bottom: 0;
             }
             
         </style>
     
         <template>
     
-            <div class="heirloom-card-wide mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title">
+            <div class="heirloom-card-wide mdl-card mdl-shadow--2dp" hidden$="{{hide}}">
+                <div class="mdl-card__title" style="background:url('../img/teacups.jpg') center/cover;">
                     <h2 class="mdl-card__title-text">Heirloom Title</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                     Authentic farm-to-table pour-over artisan stumptown, chartreuse poutine kickstarter gentrify taxidermy affogato kitsch fap. Brunch bitters leggings readymade photo booth, organic trust fund swag.
+                    
+                    <iron-collapse id="collapse">
+                  <h6>STORY</h6>
+                   <div>Keytar freegan williamsburg, yr kickstarter kombucha XOXO flannel readymade schlitz meh man bun. Neutra vegan vinyl, taxidermy trust fund chillwave lumbersexual. Pickled readymade thundercats, bushwick dreamcatcher listicle wayfarers swag before they sold out kombucha messenger bag art party keffiyeh. Pickled everyday carry drinking vinegar wayfarers, deep v banh mi ennui VHS cray franzen brunch sustainable trust fund thundercats kogi. Pabst celiac yuccie swag +1. Next level cardigan affogato, 90's sriracha vegan artisan gochujang echo park polaroid mustache cray paleo offal. Raw denim typewriter affogato fingerstache.</div>
+                   
+                   <h6>SIZE AND DIMENSION NOTES</h6>
+                   <div>Small; total of 12 pieces</div>
+                   <h6>LOCATION</h6>
+                   <div>Boxed up and currently in dining room hutch</div>
+                   <h6>TAGS</h6>
+                   <div>#Knick-knacks, #dishware</div>
+                   <h6>SHARED STATUS</h6>
+                   <div>offered to Meghan Greeley via email on 9/12/15</div>
+                    </iron-collapse>
+                    
+                    
+                    
+                    
+                
                 </div>
+                
+                
                 <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Show More</a>
+                    <button on-click="toggle" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" hidden$="{{more}}">Show More</button>
+                    
+                    <button on-click="toggle" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" hidden$="{{less}}">Show Less</button>
                 </div>
     
                 <div class="mdl-card__menu">
                     
                         <content></content>
+                        
+                         <button on-click="hideMe" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">delete</i>
+                </button>
+                        
+                        
                 </div>
             </div>
     
@@ -58,8 +94,44 @@
     
         <script>
             Polymer({
-                is: "heirloom-card"
+                is: "heirloom-card",
+                properties: {
+                    hide: {
+                        type: Boolean,
+                        value: false
+                    },
+                    
+                    more: {
+                        type: Boolean,
+                        value: false
+                    },
+                    
+                    less: {
+                        type: Boolean,
+                        value: true
+                    }
+                },
+                
+                hideMe: function() {
+                    this.hide = !this.hide
+                },
+                
+                 toggle: function() {
+                    this.$.collapse.toggle();
+                    this.less=!this.less
+                    this.more=!this.more
+                }
             });
         </script>
     
     </dom-module>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+   

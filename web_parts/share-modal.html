@@ -18,9 +18,6 @@
     
     <style>
         
-        :visited {
-           border: #fff; 
-        }
         
         ul {
             list-style: none;
@@ -31,10 +28,7 @@
             font-weight:100;
         }
         
-        h6 {
-            
-        }
-        
+
         .check-box-list {
             width: 300px;
         }
@@ -228,7 +222,7 @@
             </form>
         </dialog>
     
-    <button onclick="backdrop.open()" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="shareDetails">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="shareDetails">
                     <i class="material-icons">share</i>
                 </button>
                 
@@ -245,14 +239,16 @@
             
                 // Update button opens a modal dialog
                 updateButton.addEventListener('click', function() {
-                favDialog.showModal();
+                shareDialog.showModal();
                     });
     
                 // Form cancel button closes the dialog box
                 cancelButton.addEventListener('click', function() {
-                favDialog.close();
+                shareDialog.close();
                 });
             },
+            
+    
         });
         
     </script>
