@@ -1,4 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
 
 <link rel="stylesheet" href="../css/normalize.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -6,9 +9,6 @@
 <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
 <dom-module id="form-modal">
-
-
-
     <style>
         
         ul {
@@ -47,6 +47,11 @@
             padding: 0;
         }
         
+        #tags-panel {
+            padding-top: 20px;
+            padding-left: 80px;
+        }
+        
         #story-panel,
         #details-panel,
         #tags-panel {
@@ -57,7 +62,7 @@
     <template>
 
         <dialog class="mdl-dialog" id="editDialog">
-            <form action="#" method="dialog" class="mdl-dialog__content">
+            <form is="iron-form" action="#" method="dialog" class="mdl-dialog__content" id="basic">
                 <div><img src="../img/teacups.jpg"></div>
 
                 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
@@ -68,149 +73,60 @@
                     </div>
 
                     <div class="mdl-tabs__panel is-active" id="details-panel">
-                        <ul>
-                            <li>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="hlmm_name">
-                                    <label class="mdl-textfield__label" for="hlmm_name">Heirloom Name</label>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="hlmm_size">
-                                    <label class="mdl-textfield__label" for="hlmm_size">Notes on size or dimensions</label>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="hlmm_location">
-                                    <label class="mdl-textfield__label" for="hlmm_location">Describe where the heirloom is located</label>
-                                </div>
-                            </li>
-                        </ul>
+                           <paper-input name="name" label="Heirloom Name"></paper-input>
+                            <br>
+                            
+                            <paper-input name="size" label="Notes on size or dimensions"></paper-input>
+                            <br>
+                            
+                            <paper-input name="location" label="Describe where the heirloom is located"></paper-input>
+                            <br>
                     </div>
+                    
                     <div class="mdl-tabs__panel" id="story-panel">
-                        <ul>
-                            <li>
+                            <paper-textarea rows="7" name="story" label="Share the story behind this heirloom"></paper-textarea>
 
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <textarea class="mdl-textfield__input" type="text" rows="7" id="hlmm_desc"></textarea>
-                                    <label class="mdl-textfield__label" for="hlmm_desc">Heirloom Description and Story</label>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                     <div class="mdl-tabs__panel" id="tags-panel">
-                        <ul>
-                            <li>
-                                <ul class="check-box-list mdl-list">
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Furniture</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="furniture">
-                                            <input type="checkbox" id="furniture" class="mdl-checkbox__input" checked />
-                                        </label>
-                                    </span>
-                                    </li>
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Memorabelia</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="memorabelia">
-                                            <input type="checkbox" id="memorabelia" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Clothing and Accesseries</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="clothing">
-                                            <input type="checkbox" id="clothing" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Home Goods</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="home-goods">
-                                            <input type="checkbox" id="home-goods" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Family Photos</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="photos">
-                                            <input type="checkbox" id="photos" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Knick-knacs</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="knick-knacs">
-                                            <input type="checkbox" id="knick-knacks" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Dishware</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="dishware">
-                                            <input type="checkbox" id="dishware" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Tools and Hardware</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="tools">
-                                            <input type="checkbox" id="tools" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-
-                                    <li class="mdl-list__item">
-                                        <span class="mdl-list__item-primary-content">Jewelry</span>
-                                        <span class="mdl-list__item-secondary-action">
-                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="jewelry">
-                                            <input type="checkbox" id="jewelry" class="mdl-checkbox__input"/>
-                                        </label>
-                                    </span>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                       <input type="checkbox" name="tag" value="knick-knack"> Knick-knack<br>
+                       <input type="checkbox" name="tag" value="kitchenware"> Kitchenware<br>
+                       <input type="checkbox" name="tag" value="furniture"> Furniture<br>
+                       <input type="checkbox" name="tag" value="photos"> Photos<br>
+                       <input type="checkbox" name="tag" value="painting"> Painting<br>
+                       <input type="checkbox" name="tag" value="small-appliance"> Small Appliance<br>
+                       <input type="checkbox" name="tag" value="vintage"> Vintage<br>
+                       <input type="checkbox" name="tag" value="collection"> Collection<br>
+                       <input type="checkbox" name="tag" value="home-good"> Home Good<br>
+                       <input type="checkbox" name="tag" value="tools"> Tools<br>
                     </div>
                 </div>
 
 
                 <div class="mdl-dialog__actions">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                    <button type="submit" onclick="submitForm()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
                         Save
                     </button>
+                    
                     <button type="button" class="mdl-button close" id="cancel">Cancel</button>
                 </div>
 
 
             </form>
+            
+            <div class="output"></div>
         </dialog>
 
         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="updateDetails">
             <i class="material-icons">edit</i>
-        </button>
+        </button><div class="mdl-tooltip" for="updateDetails">Edit</div>
 
     </template>
 
     <script>
+        
+        
         Polymer({
-            is: "form-modal",
+         is: "form-modal",
             ready: function () {
                 var updateButton = document.getElementById('updateDetails');
                 var cancelButton = document.getElementById('cancel');
@@ -225,6 +141,7 @@
                 cancelButton.addEventListener('click', function () {
                     editDialog.close();
                 });
+
             },
         });
     </script>

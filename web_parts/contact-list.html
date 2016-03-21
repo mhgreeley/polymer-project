@@ -27,7 +27,7 @@
      <template is="dom-repeat" items="{{contact}}">
       <li class="mdl-list__item">
           
-             <div><span class="mdl-list__item-primary-content"><a class="mdl-list__item-secondary-action" href="mailto:{{item.email}}"><i class="material-icons">email</i></a> {{item.firstName}} {{item.lastName}} </span></div>
+             <div><span class="mdl-list__item-primary-content"><a on-click="shareRecord" class="mdl-list__item-secondary-action" href="mailto:{{item.email}}"><i class="material-icons">email</i></a> {{item.firstName}} {{item.lastName}} </span></div>
               </li>
           </template>
       
@@ -44,7 +44,12 @@
             Polymer({
                 is:"contact-list",
                 ready: function () {
-                this.contact = [
+                    this.contact = [
+                    {
+                        firstName: "Meghan",
+                        lastName: "Greeley",
+                        email: "tom@domain.com"
+                        },
                     {
                         firstName: "Tom",
                         lastName: "McAllister",
@@ -72,5 +77,6 @@
                         },
                     ]
                 },
+                
             });
      </script>
