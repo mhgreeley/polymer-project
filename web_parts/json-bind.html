@@ -6,6 +6,8 @@
 
     <link rel="import" href="../bower_components/polymer/polymer.html">
     <link rel="import" href="../bower_components/byutv-jsonp/byutv-jsonp.html">
+    <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+    
     
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -15,22 +17,31 @@
     <dom-module id="json-bind">
    <template> 
 
-
+<!--
 <byutv-jsonp
 				 auto
-				 url="http://jsonplaceholder.typicode.com/posts"
-				 params='{"userId":"1"}'
+				 url="https://api.flickr.com/services/feeds/photos_public.gne"
+				 params='{"format":"json","nojsoncallback":"1","id":"139350096@N08"}'
 				 last-response="{{lastResponse}}"
 				 last-error="{{lastError}}"
+                 on-response= "result"
 				 debounce-duration="300"></byutv-jsonp>
+-->
 
+    <iron-ajax
+    auto
+    url="https://api.flickr.com/services/feeds/photos_public.gne"
+    params='{"format":"json","nojsoncallback":"1","id":"139350096@N08"}'
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"></iron-ajax>
 
     
        <ul>
-            <template is="dom-repeat" items="{{card}}">
+            <template is="dom-repeat" items="{{handleResponse.items}}">
              <li>
-                        <img src="{{item.img}}" alt=""> 
-                          <div>{{item.title}}</div>
+                        <img src="{{item.media.m}}" alt=""> 
+                          <div>{{item.item[0]title}}</div>
                           <div>{{item.description}}</div>
                            
               
@@ -42,7 +53,8 @@
     
         <script>
             Polymer({
-                is: "json-bind"
+                is: "json-bind",
+                
                  });
         </script>
         </dom-module>

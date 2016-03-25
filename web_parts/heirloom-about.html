@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
-<dom-module id="dashboard-card">
+<dom-module id="heirloom-about">
 
 <style>
     
@@ -48,16 +48,12 @@
          <template is="dom-repeat" items="{{card}}">
             <div class="dashboard-card mdl-card mdl-shadow--2dp" style="background-color:{{item.color}}">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h6>{{item.title}}</h6></div>
+                    <h2 class="mdl-card__title-text">{{item.title}}</h2></div>
                     
             <div class="mdl-card__supporting-text">
                    {{item.text}}
                 </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a href="{{item.link}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{{item.button}}</a>
-                    <div class="mdl-layout-spacer"></div>
-                    <i class="material-icons">launch</i>
-                </div>
+                
             </div>
             
         </template>
@@ -67,15 +63,13 @@
 
 <script>
     Polymer({
-        is: "dashboard-card",
+        is: "heirloom-about",
         ready: function(){
         this.card = [
             {
                 color: "rgb(255, 152, 0)",
-                title: "Title",
-                text: "Tattooed green juice tofu, fixie pickled swag tousled organic bicycle rights viral actually biodiesel tumblr whatever",
-                link: "",
-                button: "Card 1"
+                title: "About Heirloo.mm",
+                text: "My friend Beth and I were eating lunch together one day and the subject of family arguments came up.  We had both been in situations where an elderly loved one had died and grief combined with the stress of how to deal with the many posessions this person had accumulated over the years led to family fights and resentment that exists to this day.  There had to be a better way.  We started brainstorming and the idea for Heirloo.mm was born.",
                 
                 },
                 
@@ -85,5 +79,4 @@
     
 </script>
 
-</dom-module>
-
+</dom-module

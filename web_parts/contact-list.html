@@ -18,6 +18,16 @@
       .material-icons {
           padding-right: 5px;
       }
+      
+      
+      .mdl-list__item {
+          padding: 2px;
+          
+      }
+      .mdl-list__item-primary-content {
+          font-size: 15px;
+          padding-left: 20px;;
+      }
 
   </style>
 
@@ -27,7 +37,7 @@
      <template is="dom-repeat" items="{{contact}}">
       <li class="mdl-list__item">
           
-             <div><span class="mdl-list__item-primary-content"><a on-click="shareRecord" class="mdl-list__item-secondary-action" href="mailto:{{item.email}}"><i class="material-icons">email</i></a> {{item.firstName}} {{item.lastName}} </span></div>
+             <div><span class="mdl-list__item-primary-content"><a class="mdl-list__item-secondary-action" href="mailto:{{item.email}}?subject=text&body=text"><i class="material-icons">email</i></a> {{item.firstName}} {{item.lastName}} </span><span hidden$="{{item.unshared}}">Offered via email</span></div>
               </li>
           </template>
       
@@ -43,40 +53,55 @@
         <script>
             Polymer({
                 is:"contact-list",
+                properties: {
+                    unshared: {
+                        type: Boolean,
+                        value: "{{item.shared}}"
+                    }
+                },
                 ready: function () {
                     this.contact = [
                     {
                         firstName: "Meghan",
                         lastName: "Greeley",
-                        email: "tom@domain.com"
+                        email: "meghan@domain.com",
+                        unshared: true
                         },
                     {
                         firstName: "Tom",
                         lastName: "McAllister",
-                        email: "tom@domain.com"
+                        email: "tom@domain.com",
+                        unshared: true
                         },
                     {
                         firstName: "Amy",
                         lastName: "Williams",
-                        email: "amy@domain.com"
+                        email: "amy@domain.com",
+                        unshared: true
                         },
                     {
                         firstName: "Lilly",
                         lastName: "Jones",
-                        email: "lilly@domain.com"
+                        email: "lilly@domain.com",
+                        unshared: true
                         },
                     {
                         firstName: "Dan",
                         lastName: "McAllister",
-                        email: "dan@domain.com"
+                        email: "dan@domain.com",
+                        unshared: true
                         },
                     {
                         firstName: "Twilla",
                         lastName: "Kline",
-                        email: "twilla@domain.com"
+                        email: "twilla@domain.com",
+                        unshared: true
                         },
                     ]
                 },
                 
+                shareRecord: function(){
+                    this.shared=!this.shared
+                }
             });
      </script>

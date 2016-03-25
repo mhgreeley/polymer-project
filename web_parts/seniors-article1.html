@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
-<dom-module id="dashboard-card">
+<dom-module id="seniors-article1">
 
 <style>
     
@@ -48,13 +48,13 @@
          <template is="dom-repeat" items="{{card}}">
             <div class="dashboard-card mdl-card mdl-shadow--2dp" style="background-color:{{item.color}}">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h6>{{item.title}}</h6></div>
+                    <h2 class="mdl-card__title-text">{{item.title}}</h2></div>
                     
             <div class="mdl-card__supporting-text">
                    {{item.text}}
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
-                    <a href="{{item.link}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{{item.button}}</a>
+                    <a href="{{item.link}}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">{{item.button}}</a>
                     <div class="mdl-layout-spacer"></div>
                     <i class="material-icons">launch</i>
                 </div>
@@ -67,15 +67,15 @@
 
 <script>
     Polymer({
-        is: "dashboard-card",
+        is: "seniors-article1",
         ready: function(){
         this.card = [
             {
-                color: "rgb(255, 152, 0)",
-                title: "Title",
-                text: "Tattooed green juice tofu, fixie pickled swag tousled organic bicycle rights viral actually biodiesel tumblr whatever",
-                link: "",
-                button: "Card 1"
+                color: "rgb(0, 150, 136)",
+                title: "Seniors struggle to pass on posessions",
+                text: "After age 50, people are progressively less likely to divest themselves of belongings. After age 70, about 30% of seniors say that they have done nothing in the past year to clean out, give away, or donate things, and over 80% have sold nothing.  We believe there has to be a better way!",
+                link: "http://psychsocgerontology.oxfordjournals.org/content/early/2014/02/10/geronb.gbu003.abstract",
+                button: "Read more"
                 
                 },
                 

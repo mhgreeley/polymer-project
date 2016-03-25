@@ -23,10 +23,9 @@
     <link rel="import" href="web_parts/adddesc-icon.html">
     <link rel="import" href="web_parts/response-icon.html">
     <link rel="import" href="web_parts/share-icon.html">
-    <link rel="import" href="web_parts/simple-gallery.html">
     <link rel="import" href="web_parts/form-modal.html">
     <link rel="import" href="web_parts/share-modal.html">
-    <link rel="import" href="web_parts/delete-modal.html">
+    
     
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -85,7 +84,16 @@
      <!-- Masonry Layout with Heirloom Cards -->  
           <main class="mdl-layout__content">
         
-             <contact-list></contact-list>
+            <div class="grid">
+                    <heirloom-card class="grid-item"><share-modal><contact-list></contact-list></share-modal><form-modal></form-modal></heirloom-card>
+            <div class="grid-item layout1"><h2 class="mdl-card__title-text">Sample Heirloo.mm web component</h2><p>What you see here is a sample Heirloo.mm web component.  My vision for the site is that each Heirloo.mm member would have a library of their Heirloo.mm web components that they can then gift, sell or share with loved ones.</p></div>
+        <div class="grid-item layout1">
+                       <h2 class="mdl-card__title-text">Things I did wrong...and learned from</h2><p>One reason I can't share multiple web components right now is that I used ids inside of the web-components for some of the interactive functionality you see.  Unfortunately, this means that when I use looping features to create multiple web components, I end up with items on the same page with the same id...and lots of problems.  I ran out of time to fix this for the Code Louisville deadline, but now I know what I need to fix going forward.</p>
+                      <p>I also spent a lot of time trying to figure out how to pull in photos from Flickr or Google Drive using the Polymer APIs, and ultimately this is something I am still working on.  Adding server side functionality will make this much easier...guess I will have to learn that next!</p>
+                  </div>
+                  
+                  
+              </div>
              
           </main>
   </div>

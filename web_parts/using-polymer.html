@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
 
-<dom-module id="dashboard-card">
+<dom-module id="using-polymer">
 
 <style>
     
@@ -48,7 +48,7 @@
          <template is="dom-repeat" items="{{card}}">
             <div class="dashboard-card mdl-card mdl-shadow--2dp" style="background-color:{{item.color}}">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h6>{{item.title}}</h6></div>
+                    <h2 class="mdl-card__title-text">{{item.title}}</h2></div>
                     
             <div class="mdl-card__supporting-text">
                    {{item.text}}
@@ -67,15 +67,15 @@
 
 <script>
     Polymer({
-        is: "dashboard-card",
+        is: "using-polymer",
         ready: function(){
         this.card = [
             {
-                color: "rgb(255, 152, 0)",
-                title: "Title",
-                text: "Tattooed green juice tofu, fixie pickled swag tousled organic bicycle rights viral actually biodiesel tumblr whatever",
-                link: "",
-                button: "Card 1"
+                color: "rgb(205, 220, 57)",
+                title: "Using Polymer 1.0",
+                text: "Polymer is still in the first year of its 1.0 release, and so when I decided to use it as my Javascript framework, I figured I'd face some challenges with bugs and documentation...and I did!  Still I'm really glad I explored it, plan to continue to build with it, and encourage more seasoned developers to give it a try! It's possible I'm the Louisville Polymer expert.",
+                link: "https://www.polymer-project.org/1.0/",
+                button: "Learn more"
                 
                 },
                 

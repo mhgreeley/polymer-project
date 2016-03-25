@@ -20,6 +20,10 @@ heirloom-card {
     height: auto;
 }
 
+google-map {
+    height: 400px;
+}
+
 /* Grid styles */
 
 * { box-sizing: border-box; }
@@ -31,6 +35,10 @@ body { font-family: sans-serif; }
 .grid {
   background: #fff;
 
+}
+
+.layout1 {
+    padding: 20px;
 }
 
 /* clearfix */
@@ -45,6 +53,10 @@ body { font-family: sans-serif; }
 .grid-item {
   width: 330px;
   margin-bottom: 5px;
+}
+
+.grid-image {
+    width: 330px;
 }
 
 /* -----------Media Queries--------------- */

@@ -4,6 +4,7 @@
 
 
     <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../bower_components/google-map/google-map.html.html">
     
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -12,25 +13,27 @@
 
 
 
-   <dom-module id="delete-button">
+   <dom-module id="code-louisville">
 
   <style>
+      
+google-map {
+    height: 600px;
+  }
 
   </style>
 
   <template>
+        <google-map latitude="37.77493" longitude="-122.41942"></google-map>
+</template>
 
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-      Yes, delete Heirloom
-    </button>
 
-  </template>
 
 </dom-module>
 
         
         <script>
             Polymer({
-                is: "delete-button"
+                is: "code-louisville"
             });
      </script>
