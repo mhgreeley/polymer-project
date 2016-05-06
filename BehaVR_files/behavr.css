@@ -1,0 +1,42 @@
+body {
+    background-image: url(../assets/Website-Images/clouds.jpg);
+    background-size: cover;
+}
+
+.inner img {
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.mastfoot {
+    position: fixed;
+    bottom: 0;
+}
+
+.mastfoot,
+.cover-container {
+     width: 100%;
+}
+
+.lead {
+    font-family: 'Roboto', sans-serif;
+    font-weight: medium;
+    color: rgba(255,255,255,.75);
+}
+
+.lead img {
+    width: 7%;
+    max-width: 30px;
+}
+
+/*For non mobile screens*/
+
+@media (min-width: 768px) {
+  /* resize logo */
+  .inner img {
+    width: 25%;
+  }
+
+  .lead img {
+    width: 30px;
+}
